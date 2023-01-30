@@ -3,9 +3,8 @@ import { createTheme } from "@mui/material/styles";
 
 // color design tokens
 
-export const  tokens = (mode) => (
-    {
-        mode === 'dark'
+export const  tokens = (mode) => ({
+         ...(mode === "dark"
         
         ?
             {
@@ -18,7 +17,7 @@ export const  tokens = (mode) => (
                     600: "#525252",
                     700: "#3d3d3d",
                     800: "#292929",
-                    900: "#141414"
+                    900: "#141414",
                 },
                 primary: {
                     100: "#d0d1d5",
@@ -29,7 +28,7 @@ export const  tokens = (mode) => (
                     600: "#101624",
                     700: "#0c101b",
                     800: "#080b12",
-                    900: "#040509"
+                    900: "#040509",
                 },
                 greenAccent: {
                     100: "#dbf5ee",
@@ -40,7 +39,7 @@ export const  tokens = (mode) => (
                     600: "#3da58a",
                     700: "#2e7c67",
                     800: "#1e5245",
-                    900: "#0f2922"
+                    900: "#0f2922",
                 },
                 redAccent: {
                     100: "#f8dcdb",
@@ -51,7 +50,7 @@ export const  tokens = (mode) => (
                     600: "#af3f3b",
                     700: "#832f2c",
                     800: "#58201e",
-                    900: "#2c100f"
+                    900: "#2c100f",
                 },
                 blueAccent: {
                     100: "#e1e2fe",
@@ -62,10 +61,10 @@ export const  tokens = (mode) => (
                     600: "#535ac8",
                     700: "#3e4396",
                     800: "#2a2d64",
-                    900: "#151632"
-             },
-    }:
-        {
+                    900: "#151632",
+                },
+            }
+            :{
                 grey: {
                     100: "#141414",
                     200: "#292929",
@@ -122,7 +121,7 @@ export const  tokens = (mode) => (
                     900: "#e1e2fe",
                 },
                 
-     },
+            }),
 
      });
 

@@ -15,13 +15,13 @@ code {
 html,
 body,
 #root,
-.app,
+.app_admin,
 .content{
   height:100%;
   width: 100%;
   font-family: 'Source Sans Pro', sans-serif;
 }
-.app{
+.app_admin{
   display: flex;
   position: relative;
 }
@@ -29,15 +29,15 @@ body,
 ::-webkit-scrollbar{
   width: 10px;
 }
-/* Track */
+/* Track_admin */
 ::-webkit-scrollbar-track{
   background: #e0e0e0;
 }
-/* Handle */
+/* Handle_admin */
 ::-webkit-scrollbar-thumb{
   background: #888;
 }
-/* handle-hover */
+/*** handle_admin-hover */
 ::-webkit-scrollbar-track:hover{
   background: #555;
 }
