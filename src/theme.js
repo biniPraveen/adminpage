@@ -125,3 +125,6 @@ export const  tokens = (mode) => ({
 
      });
 
+export const themeSetting = (mode) => {
+    const color = tokens(mode);
+}
