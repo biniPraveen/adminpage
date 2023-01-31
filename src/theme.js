@@ -127,4 +127,92 @@ export const  tokens = (mode) => ({
 
 export const themeSetting = (mode) => {
     const color = tokens(mode);
-}
+    return{
+        Pallete:
+        {
+            mode:mode,
+            ...(mode == 'dark'
+            ?{
+                primary: {
+                    main: color.primary[500],
+                  },
+                  secondary: {
+                    main: colors.greenAccent[500],
+                  },
+                  neutral: {
+                    dark: color.grey[700],
+                    main: color.grey[500],
+                    light: color.grey[100],
+                  },
+                  background: {
+                    default: color.primary[500],
+                  },
+                }
+              : {
+                    primary: {
+                        main: color.primary[100],
+                      },
+                      secondary: {
+                        main: color.greenAccent[500],
+                      },
+                      neutral: {
+                        dark: color.grey[700],
+                        main: color.grey[500],
+                        light: color.grey[100],
+                      },
+                      background: {
+                        default: "#fcfcfc",
+                      },
+                    }),
+              },
+
+              typography:{
+                fontFamily: ["Source Sans Pro", "san-serif"].join(","),
+                fontSize: 12,
+                h1:{
+                    fontFamily: ["Source Sans Pro", "san-serif"].join(","),
+                    fontSize: 40,
+                },
+                h2:{
+                    fontFamily: ["Source Sans Pro", "san-serif"].join(","),
+                    fontSize: 32,
+                },
+                h3:{
+                    fontFamily: ["Source Sans Pro", "san-serif"].join(","),
+                    fontSize: 24,
+                },
+                h4:{
+                    fontFamily: ["Source Sans Pro", "san-serif"].join(","),
+                    fontSize: 20,
+                },
+                h5:{
+                    fontFamily: ["Source Sans Pro", "san-serif"].join(","),
+                    fontSize: 16,
+                },
+                h6:{
+                    fontFamily: ["Source Sans Pro", "san-serif"].join(","),
+                    fontSize: 14,
+                },
+              }
+
+            };
+        };
+
+        export const ColorModeContext = createContext({
+            toggleColorMode: () => {},
+          });
+          
+          export const useMode = () => {
+            const [mode, setMode] = useState("dark");
+          
+            const colorMode = useMemo(
+              () => ({
+                toggleColorMode: () =>
+                  setMode((prev) => (prev === "light" ? "dark" : "light")),
+              }),
+              []
+            );
+          
+            const theme = useMemo(() => createTheme(themeSetting(mode)), [mode]);
+            return [theme, colorMode];
+          };
